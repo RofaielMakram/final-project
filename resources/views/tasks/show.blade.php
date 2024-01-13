@@ -36,19 +36,19 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-6 light:text-gray-900 dark:text-gray-100">
                         <div class="px-4 sm:px-0">
-                          <h3 class="text-base font-semibold leading-7 text-gray-900">Task Details</h3>
+                          <h3 class="text-base font-semibold leading-7 light:text-gray-900">Task Details</h3>
                         </div>
                         <div class="mt-6 border-t border-gray-100">
                           <dl class="divide-y divide-gray-100">
                             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                              <dt class="text-sm font-medium leading-6 text-gray-900">Title</dt>
-                              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $task->name }}</dd>
+                              <dt class="text-sm font-medium leading-6 light:text-gray-900">Title</dt>
+                              <dd class="mt-1 text-sm leading-6 light:text-gray-700 sm:col-span-2 sm:mt-0">{{ $task->name }}</dd>
                             </div>
                             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                              <dt class="text-sm font-medium leading-6 text-gray-900">Status</dt>
-                              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                              <dt class="text-sm font-medium leading-6 light:text-gray-900">Status</dt>
+                              <dd class="mt-1 text-sm leading-6 light:text-gray-700 sm:col-span-2 sm:mt-0">
                                 @if($task->status === \App\Models\Task::BACKLOG)
                                 <span class="px-1 font-md rounded-md text-sm border border-gray-500 text-gray-500 bg-gray-200">{{ $task->status }}</span>
                                 @elseif($task->status === \App\Models\Task::INPROGRESS)
@@ -61,12 +61,12 @@
                               </dd>
                             </div>
                             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                              <dt class="text-sm font-medium leading-6 text-gray-900">Project</dt>
-                              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $task->project->name }}</dd>
+                              <dt class="text-sm font-medium leading-6 light:text-gray-900">Project</dt>
+                              <dd class="mt-1 text-sm leading-6 light:text-gray-700 sm:col-span-2 sm:mt-0">{{ $task->project->name }}</dd>
                             </div>
                             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                              <dt class="text-sm font-medium leading-6 text-gray-900">Author</dt>
-                              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex space-x-2 items-center">
+                              <dt class="text-sm font-medium leading-6 light:text-gray-900">Author</dt>
+                              <dd class="mt-1 text-sm leading-6 light:text-gray-700 sm:col-span-2 sm:mt-0 flex space-x-2 items-center">
                                 <img src="https://ui-avatars.com/api/?rounded=true&name={{ $task->author->name }}">
                                 <div>
                                     <p>{{ $task->author->name }}</p>
@@ -75,8 +75,8 @@
                               </dd>
                             </div>
                             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                              <dt class="text-sm font-medium leading-6 text-gray-900">Asginee</dt>
-                              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex space-x-2 items-center">
+                              <dt class="text-sm font-medium leading-6 light:text-gray-900">Asginee</dt>
+                              <dd class="mt-1 text-sm leading-6 light:text-gray-700 sm:col-span-2 sm:mt-0 flex space-x-2 items-center">
                                 <img src="https://ui-avatars.com/api/?rounded=true&name={{ $task->asignee->name }}">
                                 <div>
                                     <p>{{ $task->asignee->name }}</p>
@@ -85,8 +85,8 @@
                               </dd>
                             </div>
                             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                              <dt class="text-sm font-medium leading-6 text-gray-900">Description</dt>
-                              <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $task->description }}</dd>
+                              <dt class="text-sm font-medium leading-6 light:text-gray-900">Description</dt>
+                              <dd class="mt-1 text-sm leading-6 light:text-gray-700 sm:col-span-2 sm:mt-0">{{ $task->description }}</dd>
                             </div>
                           </dl>
                         </div>
