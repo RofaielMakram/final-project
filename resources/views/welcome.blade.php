@@ -45,27 +45,9 @@
 
         <!-- Navbar & Hero Start -->
         <div class="position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{{ url('/') }}" class="navbar-brand p-0 d-flex align-items-center py-2">
-                    <x-application-logo />
-                    <h1 class="m-0">{{ config('app.name') }}</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse my-4" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto py-0">
-                        <!-- <a href="index.html" class="nav-item nav-link active">Home</a> -->
-                    </div>
-                    @auth
-                        <a href="{{ route('projects.index') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
-                    @else
-                        <a href="{{ route('login') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
-                        <a href="{{ route('register') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Register</a>
-                    @endauth
-                </div>
-            </nav>
-
+            
+            @include('navbar')
+            
             <div class="bg-primary hero-header">
                 <div class="container px-lg-5">
                     <div class="row g-5 align-items-end">
@@ -73,7 +55,7 @@
                             <h1 class="text-white mb-4 animated slideInDown">A Digital Agency Of Inteligents & Creative People</h1>
                             <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
                             <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                            <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                            <a href="{{ route('contact') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
@@ -360,29 +342,7 @@
         </div>
         <!-- Team End -->
         
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container px-lg-5">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="{{ url('/') }}">{{ config('app.name') }}</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
+        @include('footer')
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
