@@ -45,6 +45,23 @@
             <x-input-error :messages="$errors->get('company_name')" class="mt-2" />
         </div>
 
+        <div class="mt-4">
+            <x-input-label :value="__('Subscription Plan')" />
+            <select id="option-plan" name="option-plan" class="w-full mt-2 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" required>
+                <option value="basic">1 Month - 465 EGP</option>
+                <option value="standard">3 Months - 930 EGP</option>
+                <option value="premium">1 Year - 2,170 EGP</option>
+            </select>
+        </div>
+
+        <div class="mt-4">
+            <x-input-label :value="__('Card Details')" />
+
+            <div class="mt-2 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                <div class="px-2 py-3" style="color: white" id="card-element"></div>
+            </div>
+        </div>
+
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -55,4 +72,26 @@
             </x-primary-button>
         </div>
     </form>
+
+    @section('js')
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_51OZfiGKmBjhGSLZAfIfrmiUjSropdBGeYrqveLizwgB0vbdP0qduUqHA8BGSz0gNOeAcLfAHvt9u0GvRGnPzZTW100p8cElUQo');
+        const appearance = {
+            variables: {
+            colorPrimary: '#ffffff',
+            colorBackground: '#ffffff',
+            colorText: '#fff',
+            colorDanger: '#df1b41',
+            fontFamily: 'Ideal Sans, system-ui, sans-serif',
+            spacingUnit: '2px',
+            borderRadius: '4px',
+            }
+        };
+
+        var elements = stripe.elements({ appearance });
+        var cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+    </script>
+    @endsection
 </x-guest-layout>
